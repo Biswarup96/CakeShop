@@ -76,7 +76,7 @@ const Cart = () => {
           }}
         >
           <ShoppingBagIcon sx={{ fontSize: '2.5rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))' }} />
-          Your Shopping Cart
+          Your Shopping Cart ..
         </Typography>
       </Box>
 
