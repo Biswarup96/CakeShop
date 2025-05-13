@@ -1,0 +1,26 @@
+header{
+    width: 100%;
+    overflow: hidden;
+
+}
+.header-container{
+    top: 3px;
+    max-width: 1880px !important;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+   
+
+
+
+}
+
+@media (max-width:1320px){
+   .header-wrapper{
+    gap:60px;
+   }
+}

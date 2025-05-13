@@ -1,0 +1,144 @@
+/* ---- Cakes Section ---- */
+.cakes {
+  background-color: #E2DEF5;
+  min-height: 60vh; /* Ensure proper height */
+  padding: 40px 20px;
+}
+
+/* ---- Cakes Heading ---- */
+.cakes-heading h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #6A0572;
+}
+
+/* ---- Cakes Container ---- */
+.cakes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ---- Cake Item (Image + Name) ---- */
+.cake-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.cake-item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* ---- Circular Images ---- */
+.images {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Cake Name ---- */
+.cake-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ---- "View All" Button ---- */
+.cake-button {
+  display: flex;
+  justify-content: end; /* Center button on all screens */
+  margin-top: 20px;
+}
+
+.btn-one {
+  padding: 12px 24px;
+  border: 2px solid rgb(213, 80, 191);
+  background-color: #FF69B4; /* Soft pink */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-one:hover {
+  background-color: #cb1bce;
+  transform: scale(1.1);
+}
+
+/* ---- Responsive Styles ---- */
+@media (max-width: 1024px) {
+  .images {
+    width: 180px;
+    height: 180px;
+  }
+
+  .cake-name {
+    font-size: 14px;
+  }
+
+  .btn-one {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cakes-container {
+    gap: 20px;
+  }
+
+  .images {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cake-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cakes {
+    padding: 20px;
+  }
+
+  .cakes-heading h2 {
+    font-size: 24px;
+  }
+
+  .images {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cake-name {
+    font-size: 12px;
+  }
+
+  .btn-one {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}

@@ -1,0 +1,130 @@
+/* ---- Valentine Special Section ---- */
+.valentine {
+  background-color: #ffffff; /* Light pink background */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.valentie-heading h2 {
+  font-size: 32px;
+  color: #d6336c; /* Valentine's theme */
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* ---- Cards Container ---- */
+.mui-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between cards */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ---- Individual Card Styling (Bigger Size) ---- */
+.card-flex {
+  width: 350px; /* Bigger card */
+  border-radius: 12px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: white;
+}
+
+.card-flex:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Card Image ---- */
+.card-flex .MuiCardMedia-root {
+  height: 200px; /* Increase image size */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
+}
+
+/* ---- Card Content ---- */
+.card-flex .MuiCardContent-root {
+  padding: 15px;
+}
+
+.card-flex .MuiTypography-root {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* ---- Card Actions (Buttons) ---- */
+.card-flex .MuiCardActions-root {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.card-flex button {
+  background-color: #ff5c8d;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.card-flex button:hover {
+  background-color: #e63956;
+}
+
+/* ---- Responsive Styles ---- */
+@media (max-width: 1024px) {
+  .card-flex {
+    width: 320px; /* Slightly smaller */
+  }
+
+  .card-flex .MuiCardMedia-root {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mui-card {
+    gap: 20px;
+  }
+
+  .card-flex {
+    width: 280px; /* Smaller cards for tablets */
+  }
+
+  .card-flex .MuiCardMedia-root {
+    height: 160px;
+  }
+
+  .card-flex button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .valentie-heading h2 {
+    font-size: 26px;
+  }
+
+  .card-flex {
+    width: 100%; /* Full width on small screens */
+    max-width: 260px;
+  }
+
+  .card-flex .MuiCardMedia-root {
+    height: 140px;
+  }
+
+  .card-flex button {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
