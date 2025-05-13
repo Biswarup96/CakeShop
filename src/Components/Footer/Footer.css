@@ -1,0 +1,63 @@
+/* ---- Footer Styling ---- */
+footer {
+    padding-top: 25px;
+    background: var(--color-pruple);
+    color: white;
+}
+
+/* ---- Footer Grid Container ---- */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 4 columns */
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ---- Footer Headings ---- */
+.footer-container h4 {
+    margin-bottom: 22px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ---- Links List ---- */
+.param-links li {
+    margin-top: 10px;
+    list-style: none;
+}
+
+.param-links li a {
+    color: rgb(179, 108, 210);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.param-links li a:hover {
+    color: white;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(1, 1fr); /* Single column layout */
+        text-align: center;
+    }
+
+    .footer-container h4 {
+        font-size: 16px;
+    }
+
+    .param-links li a {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,330 @@
+:root {
+  --primary-color: #bd55c4;
+  --primary-hover: #5e2c7d;
+  --text-dark: #843289;
+  --text-medium: #666;
+  --text-light: #888;
+  --bg-light: #f8f5f2;
+  --success-green: #4CAF50;
+}
+
+/* Loading States */
+.loading-container {
+  text-align: center;
+  padding: 4rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--bg-light);
+  border-top: 4px solid var(--color-main-pink);
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite, pulse 2s ease-in-out infinite;
+  margin-bottom: 1.5rem;
+}
+.div-title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  
+}
+.div-title span{
+  margin: 10px;
+  border-bottom: 1px solid var(--success-green);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Error States */
+.error-container {
+  text-align: center;
+  padding: 4rem;
+  background: #fff5f5;
+  border-radius: 12px;
+  margin: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Product Grid Enhancements */
+.products-container {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(184, 54, 201, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.image-container {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-light);
+  transition: all 0.3s ease;
+}
+
+.veg-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--success-green);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: tagEntrance 0.5s ease-out;
+}
+
+@keyframes tagEntrance {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+.price-weight-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+.product-price {
+  color: var(--color-main-pink);
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.product-price::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.product-weight {
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: rgba(200, 200, 200, 0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.add-to-cart-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(196,95,85,0.3);
+}
+
+.add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 25%, 
+    rgba(255,255,255,0.1) 50%, 
+    transparent 75%
+  );
+  transform: rotate(45deg);
+  animation: buttonGlow 3s infinite linear;
+}
+
+@keyframes buttonGlow {
+  from { transform: translateX(-100%) rotate(45deg); }
+  to { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .products-container {
+    padding: 2rem 1rem;
+  }
+  
+  .product-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .product-card {
+    margin: 0;
+  }
+  
+  .product-title {
+    font-size: 1.3rem;
+  }
+  
+  .add-to-cart-btn {
+    padding: 1rem;
+  }
+}
+
+/* Accessibility Focus States */
+button:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Performance Optimizations */
+.product-image {
+  will-change: transform;
+}
+.add-to-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(196, 95, 85, 0.3);
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover .cart-icon {
+  transform: translateX(2px) rotate(-10deg);
+}
+
+.btn-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover .btn-text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Pulse Animation on Click */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.add-to-cart-btn:active {
+  animation: pulse 0.2s ease;
+}
